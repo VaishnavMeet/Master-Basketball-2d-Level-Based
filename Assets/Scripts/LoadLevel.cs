@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class LoadLevel : MonoBehaviour
 {
@@ -10,6 +11,14 @@ public class LoadLevel : MonoBehaviour
     public GameObject starPrefab;
     public GameObject Player;
     public GameObject Ring;
+
+    [Header("UI Elements")]
+    public GameObject gameManager;
+    public Image starOne;
+    public Image starTwo;
+    public Image starThree;
+    public Sprite yellowSprite;
+
     private void Start()
     {
 
@@ -78,6 +87,11 @@ public class LoadLevel : MonoBehaviour
             if (shooter != null)
             {
                 shooter.levelData = levelData;
+                shooter.gameManager = gameManager;
+                shooter.starOne = starOne;
+                shooter.starTwo = starTwo;
+                shooter.starThree = starThree;
+                shooter.yellowSprite = yellowSprite;
             }
         }
     }

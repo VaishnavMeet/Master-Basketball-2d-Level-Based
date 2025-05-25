@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Collections;
 using UnityEditor.Animations;
 using Unity.VisualScripting;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class BasketballDragShoot : MonoBehaviour
@@ -40,7 +41,12 @@ public class BasketballDragShoot : MonoBehaviour
     [Header("Level Reference")]
     public BasketballLevelSO levelData;
 
-
+    [Header("Ui Elements")]
+    public GameObject gameManager;
+    public Image starOne;
+    public Image starTwo;
+    public Image starThree;
+    public Sprite yellowSprite;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -70,7 +76,11 @@ public class BasketballDragShoot : MonoBehaviour
                 if (levelData != null)
                 {
                     levelData.isCompeleted = true;
-                    levelData.stars = Mathf.Max(levelData.stars, starCounts); // Avoid overwriting higher stars
+                    levelData.stars = Mathf.Max(levelData.stars, starCounts);
+                    if (levelData.stars == 1) starOne.sprite = yellowSprite;
+                    if (levelData.stars == 2) { starOne.sprite = yellowSprite; starTwo.sprite = yellowSprite; }
+                    if (levelData.stars == 3) { starOne.sprite = yellowSprite; starTwo.sprite = yellowSprite; starThree.sprite = yellowSprite; }
+                    gameManager.GetComponent<GamaManager>().displayWinMenu();
                 }
 
             }
