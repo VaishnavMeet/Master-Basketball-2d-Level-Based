@@ -104,10 +104,22 @@ public class BasketballDragShoot : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        rb.gravityScale = 0; //  Prevent falling on start
+
+        // Ensure no velocity or angular motion
+        rb.linearVelocity = Vector2.zero;
+        rb.angularVelocity = 0f;
+
+        // Stop gravity
+        rb.gravityScale = 0;
+
+        // Optional: Ensure it's dynamic and simulated
+        rb.bodyType = RigidbodyType2D.Dynamic;
+        rb.simulated = true;
+
         CreateDots();
         HideDots();
     }
+
 
     void Update()
     {

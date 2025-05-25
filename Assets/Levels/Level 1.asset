@@ -15,20 +15,17 @@ MonoBehaviour:
   levelNumber: 1
   player:
     prefab: {fileID: 100000, guid: 7a2f8b545b78ac84bacf4d00424e17f8, type: 3}
-    position: {x: -1.35, y: -2.46}
+    position: {x: 0, y: 2.46}
     rotation: {x: 0, y: 0}
   ring:
     prefab: {fileID: 4880916900395369003, guid: 5ea88bc3b7181624897328d547f1eac0, type: 3}
-    position: {x: 1.74, y: 1.44}
+    position: {x: 0, y: -2.51}
     rotation: {x: 0, y: 0}
-  rectangles:
-  - prefab: {fileID: 0}
-    position: {x: 0, y: 0}
-    rotation: {x: 0, y: 0}
+  rectangles: []
   triangles: []
   bouncyTriangles: []
   starPrefab: {fileID: 8853238915091381770, guid: 986f36443dc16904a967a796e20d0f8d, type: 3}
   starPositions:
-  - {x: 0, y: 0}
-  - {x: 0, y: 0}
-  - {x: 0, y: 0}
+  - {x: 0, y: 1.35}
+  - {x: 0, y: -1.15}
+  - {x: 0, y: 0.14}
