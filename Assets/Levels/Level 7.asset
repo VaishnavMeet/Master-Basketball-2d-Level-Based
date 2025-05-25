@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20df122e16685e24a8213c73ed8392df, type: 3}
+  m_Name: Level 7
+  m_EditorClassIdentifier: 
+  levelNumber: 1
+  player:
+    prefab: {fileID: 100000, guid: 7a2f8b545b78ac84bacf4d00424e17f8, type: 3}
+    position: {x: 0, y: 0}
+    rotation: {x: 0, y: 0}
+  ring:
+    prefab: {fileID: 4880916900395369003, guid: 5ea88bc3b7181624897328d547f1eac0, type: 3}
+    position: {x: 0, y: 0}
+    rotation: {x: 0, y: 0}
+  rectangles:
+  - prefab: {fileID: 0}
+    position: {x: 0, y: 0}
+    rotation: {x: 0, y: 0}
+  triangles: []
+  bouncyTriangles: []
+  starPrefab: {fileID: 8853238915091381770, guid: 986f36443dc16904a967a796e20d0f8d, type: 3}
+  starPositions:
+  - {x: 0, y: 0}
+  - {x: 0, y: 0}
+  - {x: 0, y: 0}
