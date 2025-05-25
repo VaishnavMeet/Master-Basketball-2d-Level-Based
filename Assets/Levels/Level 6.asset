@@ -13,6 +13,9 @@ MonoBehaviour:
   m_Name: Level 6
   m_EditorClassIdentifier: 
   levelNumber: 6
+  stars: 3
+  isUnlocked: 0
+  isCompeleted: 1
   player:
     position: {x: 1.56, y: -3.55, z: 0}
     rotation: {x: 0, y: 0, z: 0}

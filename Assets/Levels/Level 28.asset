@@ -12,22 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20df122e16685e24a8213c73ed8392df, type: 3}
   m_Name: Level 28
   m_EditorClassIdentifier: 
-  levelNumber: 1
+  levelNumber: 28
+  stars: 0
+  isUnlocked: 0
+  isCompeleted: 0
   player:
-    prefab: {fileID: 100000, guid: 7a2f8b545b78ac84bacf4d00424e17f8, type: 3}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
   ring:
-    prefab: {fileID: 4880916900395369003, guid: 5ea88bc3b7181624897328d547f1eac0, type: 3}
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
-  rectangle: {fileID: 384734154230877369, guid: 4f2ef39a13b78144baa750b0386b9fd5, type: 3}
-  triangle: {fileID: 9066907972937143123, guid: 368f5d651c3c913489db6d28268382c9, type: 3}
-  bouncyTriangle: {fileID: 739944979118105266, guid: aaddff7f2fed53e43a122e0ef8b8eb6a, type: 3}
   rectanglesPosition: []
   trianglesPosition: []
   bouncyTrianglesPosition: []
-  starPrefab: {fileID: 8853238915091381770, guid: 986f36443dc16904a967a796e20d0f8d, type: 3}
   starPositions:
   - {x: 0, y: 0, z: 0.0000000033089804}
   - {x: 0, y: 0, z: 0.0000027599383}

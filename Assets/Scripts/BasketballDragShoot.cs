@@ -34,10 +34,13 @@ public class BasketballDragShoot : MonoBehaviour
     Animator animator;
     string goalBoolName = "IsGoal";
     bool isEnter=false;
-
+    int starCounts = 0;
     AudioSource audioSource;
 
-    
+    [Header("Level Reference")]
+    public BasketballLevelSO levelData;
+
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -50,6 +53,7 @@ public class BasketballDragShoot : MonoBehaviour
             collision.gameObject.GetComponent<PolygonCollider2D>().enabled = false;
             audioSource = collision.gameObject.GetComponent<AudioSource>();
             audioSource.Play();
+            starCounts++;
             StartCoroutine(FadeAndDestroy(collision.gameObject));
         }
 
@@ -62,6 +66,13 @@ public class BasketballDragShoot : MonoBehaviour
                 animator.SetBool(goalBoolName, true);
                 StartCoroutine(FadeAndDestroy(gameObject));
                 OnGoalScored?.Invoke();
+
+                if (levelData != null)
+                {
+                    levelData.isCompeleted = true;
+                    levelData.stars = Mathf.Max(levelData.stars, starCounts); // Avoid overwriting higher stars
+                }
+
             }
         }
         else if (collision.CompareTag("wall") && isShot)

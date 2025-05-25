@@ -13,7 +13,9 @@ public class BasketballLevelSO : ScriptableObject
 {
     [Header("Level Meta")]
     public int levelNumber;
-
+    public int stars=0;
+    public bool isUnlocked=false;
+    public bool isCompeleted=false;
     [Header("Player and Ring")]
     public ObjectPositionWithRotation player;
     public ObjectPositionWithRotation ring;

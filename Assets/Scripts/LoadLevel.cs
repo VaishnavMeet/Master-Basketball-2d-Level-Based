@@ -12,13 +12,17 @@ public class LoadLevel : MonoBehaviour
     public GameObject Ring;
     private void Start()
     {
-        if (levelData == null)
+
+        if (LevelManager.currentLevel != null)
         {
-           
-            return;
+            levelData=LevelManager.currentLevel;
+            LoadLevelFromSO(levelData);
+        }
+        else
+        {
+            Debug.LogError("LevelManager.currentLevel is NULL. Level not assigned.");
         }
 
-        LoadLevelFromSO(levelData);
     }
 
     public void LoadLevelFromSO(BasketballLevelSO data)
@@ -70,6 +74,11 @@ public class LoadLevel : MonoBehaviour
             GameObject obj = Instantiate(prefab);
             obj.transform.position = objData.position;
             obj.transform.rotation = Quaternion.Euler(objData.rotation);
+            var shooter = obj.GetComponent<BasketballDragShoot>();
+            if (shooter != null)
+            {
+                shooter.levelData = levelData;
+            }
         }
     }
 }

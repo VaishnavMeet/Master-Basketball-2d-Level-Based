@@ -12,7 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20df122e16685e24a8213c73ed8392df, type: 3}
   m_Name: Level 4
   m_EditorClassIdentifier: 
-  levelNumber: 1
+  levelNumber: 4
+  stars: 3
+  isUnlocked: 0
+  isCompeleted: 1
   player:
     position: {x: -1.51, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
