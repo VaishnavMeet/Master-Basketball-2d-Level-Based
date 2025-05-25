@@ -1,11 +1,11 @@
 using UnityEngine;
 
+
 [System.Serializable]
-public struct GameObjectWithPosition
+public struct ObjectPositionWithRotation
 {
-    public GameObject prefab;
-    public Vector2 position;
-    public Vector2 rotation;
+    public Vector3 position;
+    public Vector3 rotation;
 }
 
 [CreateAssetMenu(fileName = "NewBasketballLevel", menuName = "Basketball/Level")]
@@ -15,15 +15,15 @@ public class BasketballLevelSO : ScriptableObject
     public int levelNumber;
 
     [Header("Player and Ring")]
-    public GameObjectWithPosition player;
-    public GameObjectWithPosition ring;
+    public ObjectPositionWithRotation player;
+    public ObjectPositionWithRotation ring;
 
     [Header("Obstacles")]
-    public GameObjectWithPosition[] rectangles;
-    public GameObjectWithPosition[] triangles;
-    public GameObjectWithPosition[] bouncyTriangles;
+   
+    public ObjectPositionWithRotation[] rectanglesPosition;
+    public ObjectPositionWithRotation[] trianglesPosition;
+    public ObjectPositionWithRotation[] bouncyTrianglesPosition;
 
-    [Header("Stars")]
-    public GameObject starPrefab;
-    public Vector2[] starPositions = new Vector2[3]; // Always 3 stars
+    [Header("Ring")]
+    public Vector3[] starPositions = new Vector3[3]; // Always 3 stars
 }

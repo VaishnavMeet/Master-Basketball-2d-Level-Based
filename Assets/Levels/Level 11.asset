@@ -14,21 +14,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelNumber: 1
   player:
-    prefab: {fileID: 100000, guid: 7a2f8b545b78ac84bacf4d00424e17f8, type: 3}
-    position: {x: 0, y: 0}
-    rotation: {x: 0, y: 0}
+    position: {x: 2.15, y: -4.1, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
   ring:
-    prefab: {fileID: 4880916900395369003, guid: 5ea88bc3b7181624897328d547f1eac0, type: 3}
-    position: {x: 0, y: 0}
-    rotation: {x: 0, y: 0}
-  rectangles:
-  - prefab: {fileID: 0}
-    position: {x: 0, y: 0}
-    rotation: {x: 0, y: 0}
-  triangles: []
-  bouncyTriangles: []
-  starPrefab: {fileID: 8853238915091381770, guid: 986f36443dc16904a967a796e20d0f8d, type: 3}
+    position: {x: -1.96, y: -4.65, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+  rectanglesPosition:
+  - position: {x: 0, y: -2.42, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+  - position: {x: 0, y: -1.44, z: 0}
+    rotation: {x: 0, y: 0, z: 90}
+  - position: {x: 0, y: 0.49, z: 0}
+    rotation: {x: 0, y: 0, z: 90}
+  - position: {x: 0, y: -3.45, z: 0}
+    rotation: {x: 0, y: 0, z: 90}
+  - position: {x: 0, y: -0.5, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+  trianglesPosition:
+  - position: {x: -2.2, y: 4.4, z: 0}
+    rotation: {x: 0, y: 0, z: 270}
+  - position: {x: 2.2, y: 4.4, z: 0}
+    rotation: {x: 0, y: 0, z: 180}
+  bouncyTrianglesPosition: []
   starPositions:
-  - {x: 0, y: 0}
-  - {x: 0, y: 0}
-  - {x: 0, y: 0}
+  - {x: -1.92, y: -3.3, z: 0}
+  - {x: 1.91, y: 3.04, z: 0}
+  - {x: 0.1, y: 4.3, z: 0}

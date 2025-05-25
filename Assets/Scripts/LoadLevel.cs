@@ -4,7 +4,12 @@ public class LoadLevel : MonoBehaviour
 {
     [Header("Level Data")]
     public BasketballLevelSO levelData;
-
+    public GameObject rectangle;
+    public GameObject triangle;
+    public GameObject bouncyTriangle;
+    public GameObject starPrefab;
+    public GameObject Player;
+    public GameObject Ring;
     private void Start()
     {
         if (levelData == null)
@@ -19,44 +24,50 @@ public class LoadLevel : MonoBehaviour
     public void LoadLevelFromSO(BasketballLevelSO data)
     {
         // Load Player
-        InstantiateWithTransform(data.player);
+        InstantiateWithTransform(Player,data.player);
 
         // Load Ring
-        InstantiateWithTransform(data.ring);
+        InstantiateWithTransform(Ring, data.ring);
 
-        // Load Rectangles
-        foreach (var rect in data.rectangles)
+
+        foreach (var pos in data.rectanglesPosition)
         {
-            InstantiateWithTransform(rect);
+            if (data.rectanglesPosition != null)
+            {
+                Instantiate(rectangle, pos.position, Quaternion.Euler(pos.rotation));
+            }
+        }
+        
+        foreach (var pos in data.trianglesPosition)
+        {
+            if (data.trianglesPosition != null)
+            {
+                Instantiate(triangle, pos.position, Quaternion.Euler(pos.rotation));
+            }
+        }
+        
+        foreach (var pos in data.bouncyTrianglesPosition)
+        {
+            if (data.bouncyTrianglesPosition != null)
+            {
+                Instantiate(bouncyTriangle, pos.position, Quaternion.Euler(pos.rotation));
+            }
         }
 
-        // Load Triangles
-        foreach (var tri in data.triangles)
-        {
-            InstantiateWithTransform(tri);
-        }
-
-        // Load Bouncy Triangles
-        foreach (var btri in data.bouncyTriangles)
-        {
-            InstantiateWithTransform(btri);
-        }
-
-        // Load Stars
         foreach (var pos in data.starPositions)
         {
-            if (data.starPrefab != null)
+            if (starPrefab != null)
             {
-                Instantiate(data.starPrefab, pos, Quaternion.identity);
+                Instantiate(starPrefab, pos, Quaternion.identity);
             }
         }
     }
 
-    private void InstantiateWithTransform(GameObjectWithPosition objData)
+    private void InstantiateWithTransform(GameObject prefab,ObjectPositionWithRotation objData)
     {
-        if (objData.prefab != null)
+        if (prefab != null)
         {
-            GameObject obj = Instantiate(objData.prefab);
+            GameObject obj = Instantiate(prefab);
             obj.transform.position = objData.position;
             obj.transform.rotation = Quaternion.Euler(objData.rotation);
         }
