@@ -35,6 +35,7 @@ public class BasketballDragShoot : MonoBehaviour
     Animator animator;
     string goalBoolName = "IsGoal";
     bool isEnter=false;
+    bool isCompeleted=false;
     int starCounts = 0;
     AudioSource audioSource;
 
@@ -65,6 +66,7 @@ public class BasketballDragShoot : MonoBehaviour
 
         if (collision.CompareTag("Net1") && isEnter)
         {
+                    isCompeleted = true;
             animator = collision.gameObject.GetComponent<Animator>();
             if (animator != null)
             {
@@ -85,9 +87,14 @@ public class BasketballDragShoot : MonoBehaviour
 
             }
         }
-        else if (collision.CompareTag("wall") && isShot)
+        else if (collision.CompareTag("wall") && isShot && !isCompeleted)
+        {
+            gameManager.GetComponent<GamaManager>().displayLoseMenu();
+            StartCoroutine(FadeAndDestroy(gameObject));
+        }else if (collision.CompareTag("wall") && isShot && isCompeleted)
         {
             StartCoroutine(FadeAndDestroy(gameObject));
+            
         }
     }
 

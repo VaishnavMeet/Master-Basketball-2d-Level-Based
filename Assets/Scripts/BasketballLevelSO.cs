@@ -28,4 +28,7 @@ public class BasketballLevelSO : ScriptableObject
 
     [Header("Ring")]
     public Vector3[] starPositions = new Vector3[3]; // Always 3 stars
+
+    [Header("Next Level")]
+    public BasketballLevelSO nextLevel;
 }

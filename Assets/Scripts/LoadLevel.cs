@@ -18,6 +18,7 @@ public class LoadLevel : MonoBehaviour
     public Image starTwo;
     public Image starThree;
     public Sprite yellowSprite;
+    public Text level;
 
     private void Start()
     {
@@ -36,6 +37,7 @@ public class LoadLevel : MonoBehaviour
 
     public void LoadLevelFromSO(BasketballLevelSO data)
     {
+        level.text = "LEVEL " + levelData.levelNumber;
         // Load Player
         InstantiateWithTransform(Player,data.player);
 

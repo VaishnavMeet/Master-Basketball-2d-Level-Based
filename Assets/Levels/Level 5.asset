@@ -31,3 +31,4 @@ MonoBehaviour:
   - {x: 1.17, y: -0.41, z: 0}
   - {x: -1.02, y: 3.19, z: 0}
   - {x: 0.86, y: 2.41, z: 0}
+  nextLevel: {fileID: 11400000, guid: 2a94b0375ba0fed4093abe47e587b425, type: 2}
