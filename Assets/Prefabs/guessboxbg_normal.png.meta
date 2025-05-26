@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      guessboxbg_normal_0: 1548701023671249079
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
